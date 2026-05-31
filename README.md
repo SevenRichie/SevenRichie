@@ -1,16 +1,25 @@
-## Hi there 👋
+```js
+const profile = {
+    nick: "SevenRichieWhite",
+    firstAlias: "Seven",
+    secondAlias: "Richie",
+    stack: ["HTML", "CSS", "JS", "PHP", "Twig"]
+};
 
-<!--
-**SevenRichie/SevenRichie** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+const mode = "public"; // public | friend-1 | friend-2
 
-Here are some ideas to get you started:
+const displayName = document.getElementById("display-name");
+const stackList = document.querySelector(".stack");
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+if (mode === "friend-1") {
+    displayName.textContent = profile.firstAlias;
+} else if (mode === "friend-2") {
+    displayName.textContent = profile.secondAlias;
+} else {
+    displayName.textContent = profile.nick;
+}
+
+stackList.innerHTML = profile.stack
+    .map(item => `<li>${item}</li>`)
+    .join("");
+```
