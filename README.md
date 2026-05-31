@@ -1,25 +1,33 @@
-```js
-const profile = {
-    nick: "SevenRichieWhite",
-    firstAlias: "Seven",
-    secondAlias: "Richie",
-    stack: ["HTML", "CSS", "JS", "PHP", "Twig"]
-};
-
-const mode = "public"; // public | friend-1 | friend-2
-
-const displayName = document.getElementById("display-name");
-const stackList = document.querySelector(".stack");
-
-if (mode === "friend-1") {
-    displayName.textContent = profile.firstAlias;
-} else if (mode === "friend-2") {
-    displayName.textContent = profile.secondAlias;
-} else {
-    displayName.textContent = profile.nick;
-}
-
-stackList.innerHTML = profile.stack
-    .map(item => `<li>${item}</li>`)
-    .join("");
+```html
+<!doctype html>
+<html lang="DE_or_EN">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Info - SevenRichieWhite</title>
+        <meta name="alias" content="Seven or Richie" />
+        <style>
+            body {
+                color: #ffe5c8;
+                height: 6803px;
+                width: 2079px;
+            }
+        </style>
+    </head>
+    <body class="human">
+        <time datetime="540904380">Born</time>
+        <ul class="stack">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+            <li>PHP</li>
+        </ul>
+        <ul class="software">
+            <li>Symfony</li>
+            <li>Cecil</li>
+            <li>Grav</li>
+            <li>Typemill</li>
+            <li>Open Source</li>
+        </ul>
+    </body>
+</html>
 ```
